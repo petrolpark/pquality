@@ -1,0 +1,12 @@
+{
+    "contaminant.pquality.bronze_quality": "Bronze Quality",
+    "contaminant.pquality.bronze_quality.absent": "Not Bronze Quality",
+    "contaminant.pquality.silver_quality": "Silver Quality",
+    "contaminant.pquality.silver_quality.absent": "Not Silver Quality",
+    "contaminant.pquality.gold_quality": "Gold Quality",
+    "contaminant.pquality.gold_quality.absent": "Not Gold Quality",
+    "contaminant.pquality.diamond_quality": "Diamond Quality",
+    "contaminant.pquality.diamond_quality.absent": "Not Diamond Quality",
+    "contaminant.pquality.netherite_quality": "Netherite Quality",
+    "contaminant.pquality.netherite_quality.absent": "Not Netherite Quality"
+}

@@ -1,0 +1,9 @@
+{
+    "preservationProportion": 0.75,
+    "color": 16755200,
+    "absentColor": 16755200,
+    "children": [
+        "pquality:bronze_quality",
+        "pquality:silver_quality"
+    ]
+}

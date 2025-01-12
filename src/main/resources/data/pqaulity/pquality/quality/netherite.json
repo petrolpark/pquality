@@ -1,0 +1,7 @@
+{
+    "priority": 5000,
+    "multiplier": 2.0,
+    "bigMultiplier": 4.0,
+    "reducer": 0.5,
+    "contaminant": "pquality:netherite_quality"
+}

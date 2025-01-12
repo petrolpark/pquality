@@ -1,0 +1,7 @@
+{
+    "priority": 4000,
+    "multiplier": 1.75,
+    "bigMultiplier": 3.0,
+    "reducer": 0.6,
+    "contaminant": "pquality:diamond_quality"
+}

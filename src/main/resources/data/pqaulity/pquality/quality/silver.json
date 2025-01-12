@@ -1,0 +1,7 @@
+{
+    "priority": 2000,
+    "multiplier": 1.25,
+    "bigMultiplier": 1.5,
+    "reducer": 0.8,
+    "contaminant": "pquality:silver_quality"
+}
