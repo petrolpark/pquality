@@ -1,8 +1,9 @@
-package com.petrolpark.pqaulity.event;
+package com.petrolpark.pquality.event;
 
-import com.petrolpark.pqaulity.Pquality;
-import com.petrolpark.pqaulity.core.RegisteredQuality;
+import com.petrolpark.pquality.Pquality;
+import com.petrolpark.pquality.core.RegisteredQuality;
 
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.DataPackRegistryEvent;
@@ -13,5 +14,10 @@ public class ModEvents {
     @SubscribeEvent
     public static void addDatapackRegistries(DataPackRegistryEvent.NewRegistry event) {
         event.dataPackRegistry(Pquality.QUALITY_REGISTRY, RegisteredQuality.CODEC, RegisteredQuality.CODEC);
+    };
+
+    @SubscribeEvent
+    public static void onRegisterClientReloadListeners(RegisterClientReloadListenersEvent event) {
+
     };
 };

@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.core;
+package com.petrolpark.pquality.core;
 
 import com.petrolpark.contamination.Contaminant;
 import com.petrolpark.contamination.IContamination;

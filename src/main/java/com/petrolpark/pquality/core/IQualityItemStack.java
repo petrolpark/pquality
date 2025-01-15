@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.core;
+package com.petrolpark.pquality.core;
 
 public interface IQualityItemStack {
 

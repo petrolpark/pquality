@@ -1,8 +1,8 @@
-package com.petrolpark.pqaulity.event;
+package com.petrolpark.pquality.event;
 
 import com.petrolpark.contamination.ItemContaminationSavedEvent;
-import com.petrolpark.pqaulity.core.QualityUtil;
-import com.petrolpark.pqaulity.core.RegisteredQuality;
+import com.petrolpark.pquality.core.QualityUtil;
+import com.petrolpark.pquality.core.RegisteredQuality;
 
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

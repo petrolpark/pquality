@@ -1,7 +1,7 @@
 {
     "preservationProportion": 0.8,
-    "color": 16755200,
-    "absentColor": 16755200,
+    "color": 5636095,
+    "absentColor": 5636095,
     "children": [
         "pquality:bronze_quality",
         "pquality:silver_quality",

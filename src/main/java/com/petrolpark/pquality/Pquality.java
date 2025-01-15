@@ -1,13 +1,14 @@
-package com.petrolpark.pqaulity;
+package com.petrolpark.pquality;
 
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.petrolpark.pqaulity.core.RegisteredQuality;
+import com.petrolpark.pquality.core.RegisteredQuality;
 import com.petrolpark.registrate.PetrolparkRegistrate;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -28,8 +29,13 @@ public class Pquality
 
     public static final ResourceKey<Registry<RegisteredQuality>> QUALITY_REGISTRY = REGISTRATE.makeRegistry("quality", RegistryBuilder::new);
     
+    public static final ResourceLocation asResource(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    };
+
     public Pquality() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::init);

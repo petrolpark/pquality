@@ -1,6 +1,6 @@
-package com.petrolpark.pqaulity.client;
+package com.petrolpark.pquality.client;
 
-import com.petrolpark.pqaulity.core.QualityUtil;
+import com.petrolpark.pquality.core.QualityUtil;
 
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

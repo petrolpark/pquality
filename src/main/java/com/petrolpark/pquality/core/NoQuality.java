@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.core;
+package com.petrolpark.pquality.core;
 
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

@@ -1,14 +1,13 @@
-package com.petrolpark.pqaulity.client;
+package com.petrolpark.pquality.client;
 
 import com.petrolpark.PetrolparkRegistries;
-import com.petrolpark.pqaulity.Pquality;
-import com.petrolpark.pqaulity.core.RegisteredQuality;
+import com.petrolpark.pquality.Pquality;
+import com.petrolpark.pquality.core.RegisteredQuality;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.TextureAtlasHolder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -26,7 +25,7 @@ public class QualityIconTextureManager extends TextureAtlasHolder {
     };
 
     public QualityIconTextureManager(TextureManager textureManager) {
-        super(textureManager, new ResourceLocation("textures/atlas/quality.png"), new ResourceLocation("quality"));
+        super(textureManager, Pquality.asResource("textures/atlas/qualities.png"), Pquality.asResource("qualities"));
     };
 
     public TextureAtlasSprite get(RegisteredQuality quality) {

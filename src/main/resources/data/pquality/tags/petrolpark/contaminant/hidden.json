@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "pquality:bronze_quality",
+        "pquality:silver_quality",
+        "pquality:gold_quality",
+        "pquality:diamond_quality",
+        "pquality:netherite_quality"
+    ]
+}

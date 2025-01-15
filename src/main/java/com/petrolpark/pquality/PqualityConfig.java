@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity;
+package com.petrolpark.pquality;
 
 import org.apache.commons.lang3.tuple.Pair;
 

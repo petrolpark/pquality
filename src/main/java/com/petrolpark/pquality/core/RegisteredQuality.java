@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.core;
+package com.petrolpark.pquality.core;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -11,8 +11,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.petrolpark.PetrolparkRegistries;
 import com.petrolpark.contamination.Contaminant;
-import com.petrolpark.pqaulity.Pquality;
-import com.petrolpark.pqaulity.client.QualityIconTextureManager;
+import com.petrolpark.pquality.Pquality;
+import com.petrolpark.pquality.client.QualityIconTextureManager;
 
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -33,7 +33,7 @@ public class RegisteredQuality implements IQuality {
     public static final Codec<RegisteredQuality> CODEC = ExtraCodecs.catchDecoderException(RecordCodecBuilder.create(instance -> 
         instance.group(
             Codec.intRange(Integer.MIN_VALUE, Integer.MAX_VALUE).fieldOf("priority").forGetter(RegisteredQuality::getPriority),
-            Codec.doubleRange(1d, Double.MAX_VALUE).fieldOf("multipier").forGetter(RegisteredQuality::getMultiplier),
+            Codec.doubleRange(1d, Double.MAX_VALUE).fieldOf("multiplier").forGetter(RegisteredQuality::getMultiplier),
             Codec.doubleRange(1d, Double.MAX_VALUE).fieldOf("bigMultiplier").forGetter(RegisteredQuality::getBigMultiplier),
             Codec.doubleRange(0d, 1d).fieldOf("reducer").forGetter(RegisteredQuality::getReducer),
             ResourceLocation.CODEC.fieldOf("contaminant").forGetter(quality -> quality.contaminantLocation)
@@ -138,8 +138,8 @@ public class RegisteredQuality implements IQuality {
     public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) {
         PoseStack ms = guiGraphics.pose();
         ms.pushPose();
-        ms.scale(0.5f, 0.5f, 1f);
-        guiGraphics.blit(xOffset + 8, yOffset, 10, 16, 16, QualityIconTextureManager.getInstance().get(this));
+        ms.translate(xOffset, yOffset, 0f);
+        guiGraphics.blit(0, 0, 200, 16, 16, QualityIconTextureManager.getInstance().get(this));
         ms.popPose();
         return false;
     };
@@ -161,7 +161,7 @@ public class RegisteredQuality implements IQuality {
                 CONTAMINANT_QUALITIES.put(quality.contaminant, quality);
             });
             ORDERED_CONTAMINANTS = new TreeSet<>((c1, c2) -> {
-                return CONTAMINANT_QUALITIES.get(c1).getPriority() - CONTAMINANT_QUALITIES.get(c2).getPriority();
+                return CONTAMINANT_QUALITIES.get(c2).getPriority() - CONTAMINANT_QUALITIES.get(c1).getPriority();
             });
             ORDERED_CONTAMINANTS.addAll(CONTAMINANT_QUALITIES.keySet());
         };

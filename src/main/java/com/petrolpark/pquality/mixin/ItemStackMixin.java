@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.mixin;
+package com.petrolpark.pquality.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -6,10 +6,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.petrolpark.pqaulity.PqualityConfig;
-import com.petrolpark.pqaulity.core.IQuality;
-import com.petrolpark.pqaulity.core.IQualityItemStack;
-import com.petrolpark.pqaulity.core.QualityUtil;
+import com.petrolpark.pquality.PqualityConfig;
+import com.petrolpark.pquality.core.IQuality;
+import com.petrolpark.pquality.core.IQualityItemStack;
+import com.petrolpark.pquality.core.QualityUtil;
 
 import net.minecraft.world.item.ItemStack;
 

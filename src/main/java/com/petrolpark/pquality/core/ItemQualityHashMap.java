@@ -1,4 +1,4 @@
-package com.petrolpark.pqaulity.core;
+package com.petrolpark.pquality.core;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
