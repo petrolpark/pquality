@@ -4,7 +4,14 @@
     "compatibilityLevel": "JAVA_17",
     "refmap": "pquality.refmap.json",
     "mixins": [
-        "ItemStackMixin"
+        "accessor.MobEffectInstanceAccessor",
+        "AnvilMenuMixin",
+        "EyeOfEnderMixin",
+        "FireworkRocketEntityMixin",
+        "IForgeItemMixin",
+        "ItemStackMixin",
+        "MerchantContainerMixin",
+        "MerchantResultSlotMixin"
     ],
     "injectors": {
         "defaultRequire": 1
