@@ -10,15 +10,19 @@ import com.petrolpark.pquality.PqualityConfig;
 import com.petrolpark.pquality.core.QualityUtil;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.EyeOfEnder;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 @Mixin(EyeOfEnder.class)
-public abstract class EyeOfEnderMixin {
+public abstract class EyeOfEnderMixin extends Entity {
 
-    @Shadow
-    RandomSource random;
+    public EyeOfEnderMixin(EntityType<?> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+        throw new AssertionError();
+    };
 
     @Shadow
     boolean surviveAfterDeath;

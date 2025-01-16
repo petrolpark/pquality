@@ -90,7 +90,7 @@ public class PqualityConfig {
                     .comment(
                         "Attributes affected by the Quality",
                         "Only default Attribute Modifiers are affected (not custom ones, stored in item NBT)"
-                    ).defineListAllowEmpty("affectAttributes", List.of("minecraft:generic.attack_damage"), PqualityConfig::validateAttributeName);
+                    ).defineListAllowEmpty("affectAttributes", List.of("minecraft:generic.attack_damage", "minecraft:generic.attack_speed", "minecraft:generic.armor"), PqualityConfig::validateAttributeName);
 
             } builder.pop();
 
@@ -102,15 +102,36 @@ public class PqualityConfig {
         };
     };
 
+    public static class Client {
+
+        public final BooleanValue shiftToSeeQuality;
+
+        public Client(ForgeConfigSpec.Builder builder) {
+            builder.comment("Client-side Pquality configs")
+                .push("client");
+
+            shiftToSeeQuality = builder
+                .comment("The Quality icon is only shown if the shift key is held down")
+                .define("shiftToSeeQuality", false);
+
+            builder.pop();
+        };
+    }
+    
     private static final boolean validateAttributeName(Object obj) {
         return obj instanceof final String attributeName && ForgeRegistries.ATTRIBUTES.containsKey(new ResourceLocation(attributeName));
     };
 
+    protected static final ForgeConfigSpec clientSpec;
+    public static final Client CLIENT;
     protected static final ForgeConfigSpec serverSpec;
     public static final Server SERVER;
     static {
-        final Pair<Server, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Server::new);
-        serverSpec = specPair.getRight();
-        SERVER = specPair.getLeft();
+        final Pair<Server, ForgeConfigSpec> serverSpecPair = new ForgeConfigSpec.Builder().configure(Server::new);
+        serverSpec = serverSpecPair.getRight();
+        SERVER = serverSpecPair.getLeft();
+        final Pair<Client, ForgeConfigSpec> clientSpecPair = new ForgeConfigSpec.Builder().configure(Client::new);
+        clientSpec = clientSpecPair.getRight();
+        CLIENT = clientSpecPair.getLeft();
     };
 };

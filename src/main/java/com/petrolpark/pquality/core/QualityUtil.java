@@ -19,10 +19,14 @@ public class QualityUtil {
     };
 
     public static IQuality fetchQuality(IContamination<?, ?> contamination) {
-        for (Contaminant contaminant : RegisteredQuality.ORDERED_CONTAMINANTS) {
-            if (contamination.has(contaminant)) return RegisteredQuality.CONTAMINANT_QUALITIES.get(contaminant);
-        };
-        return NO_QUALITY;
+        Contaminant contaminant = getHighestQualityContaminant(contamination);
+        if (contaminant == null) return NO_QUALITY;
+        return RegisteredQuality.CONTAMINANT_QUALITIES.get(contaminant);
+    };
+
+    public static Contaminant getHighestQualityContaminant(IContamination<?, ?> contamination) {
+        for (Contaminant contaminant : RegisteredQuality.ORDERED_CONTAMINANTS) if (contamination.has(contaminant)) return contaminant;
+        return null;
     };
 
     public static IQualityItemStack getQualityItemStack(ItemStack stack) {

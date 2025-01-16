@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.petrolpark.pquality.core.RegisteredQuality;
+import com.petrolpark.pquality.recipe.PqualityRecipeTypes;
 import com.petrolpark.registrate.PetrolparkRegistrate;
 
 import net.minecraft.core.Registry;
@@ -43,7 +44,11 @@ public class Pquality
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        // Registration
+        PqualityRecipeTypes.register(modEventBus);
+
         // Config
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PqualityConfig.clientSpec);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, PqualityConfig.serverSpec);
     };
 

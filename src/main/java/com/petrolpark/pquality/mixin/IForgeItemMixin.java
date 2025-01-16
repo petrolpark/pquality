@@ -21,7 +21,7 @@ public interface IForgeItemMixin {
     @Shadow
     Item self();
     
-    @Overwrite
+    @Overwrite(remap = false)
     @SuppressWarnings("deprecation")
     default FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
         if (PqualityConfig.SERVER.affectFood()) return QualityFoodManager.get(self(), QualityUtil.getQuality(stack));

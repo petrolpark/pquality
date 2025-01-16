@@ -151,6 +151,12 @@ dependencies {
 
     // Petrolpark Library (temporary)
     implementation "com.petrolpark:petrolpark:${minecraft_version}-${petrolpark_library_version}"
+
+    // Create
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+
+    // Flywheel
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     
     // ANNOTATION PROCESSORS
 

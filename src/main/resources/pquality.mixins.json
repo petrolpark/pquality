@@ -3,8 +3,10 @@
     "package": "com.petrolpark.pquality.mixin",
     "compatibilityLevel": "JAVA_17",
     "refmap": "pquality.refmap.json",
+    "plugin": "com.petrolpark.pquality.mixin.plugin.PqualityMixinPlugin",
     "mixins": [
         "accessor.MobEffectInstanceAccessor",
+        "compat.create.KineticBlockEntityMixin",
         "AnvilMenuMixin",
         "EyeOfEnderMixin",
         "FireworkRocketEntityMixin",
