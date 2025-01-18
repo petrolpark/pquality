@@ -1,5 +1,6 @@
 modLoader="javafml"
 loaderVersion="[40,)"
+issueTrackerURL="https://github.com/petrolpark/pquality/issues"
 license="All Rights Reserved"
 
 [[mods]]
