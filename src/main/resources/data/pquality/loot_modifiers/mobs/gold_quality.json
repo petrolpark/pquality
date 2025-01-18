@@ -1,0 +1,64 @@
+{
+    "type": "petrolpark:contaminate",
+    "conditions": [
+        {
+            "condition": "petrolpark:parameters_supplied",
+            "parameters": [
+                "minecraft:this_entity",
+                "minecraft:killer_entity",
+                "minecraft:damage_source"
+            ]
+        },
+        {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+                "equipment": {
+                    "mainhand": {
+                        "enchantments": [
+                            {
+                                "enchantment": "pquality:enhancement"
+                            }
+                        ]
+                    }
+                }
+            },
+            "entity": "killer"
+        }
+    ],
+    "contaminant": "pquality:silver_quality",
+    "chance": {
+        "type": "petrolpark:sigmoid",
+        "midpoint": {
+            "type": "petrolpark:sum",
+            "values": [
+                65.8,
+                {
+                    "type": "petrolpark:product",
+                    "values": [
+                        -0.8,
+                        {
+                            "type": "petrolpark:context_entity_property",
+                            "target": "killer",
+                            "value": {
+                                "type": "petrolpark:equipment_property",
+                                "slot": "mainhand",
+                                "value": {
+                                    "type": "petrolpark:enchantment_level",
+                                    "enchantment": "pquality:enhancement"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "shallowness": 18.0,
+        "value": {
+            "type": "petrolpark:context_entity_property",
+            "target": "killer",
+            "value": {
+                "type": "petrolpark:experience_level"
+            }
+        }
+    }
+}

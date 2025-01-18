@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
+import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -27,8 +28,10 @@ public class PqualityConfig {
         public final BooleanValue affectMerchantTradeReward;
         public final BooleanValue affectMerchantTradeXp;
         public final BooleanValue affectPotionLength;
-
         public final ConfigValue<List<? extends String>> affectedAttributes;
+
+        public final IntValue enhancementEnchantmentMaxLevel;
+        public final ConfigValue<List<? extends String>> enhancementIncompatibleEnchantments;
 
         public Server(ForgeConfigSpec.Builder builder) {
             builder.comment("Pquality world-specific Configs")
@@ -84,15 +87,24 @@ public class PqualityConfig {
                 .worldRestart()
                 .define("affectPotionLength", true);
 
-            builder.push("attributes"); {
-
-                affectedAttributes = builder
+            affectedAttributes = builder
                     .comment(
                         "Attributes affected by the Quality",
                         "Only default Attribute Modifiers are affected (not custom ones, stored in item NBT)"
                     ).defineListAllowEmpty("affectAttributes", List.of("minecraft:generic.attack_damage", "minecraft:generic.attack_speed", "minecraft:generic.armor"), PqualityConfig::validateAttributeName);
 
-            } builder.pop();
+            builder.push("enchantments"); {
+
+                enhancementEnchantmentMaxLevel = builder
+                    .comment("Maximum level of the Enhancement Enchantment")
+                    .worldRestart()
+                    .defineInRange("enhancementMaxLevel", 10, 1, 255);
+
+                enhancementIncompatibleEnchantments = builder
+                    .comment("Enchantments incompatible with Enhancement")
+                    .defineListAllowEmpty("enhancementIncompatibleEnchantments", List.of("minecraft:fortune", "minecraft:silk_touch", "minecraft:looting", "minecraft:luck_of_the_sea"), PqualityConfig::validateEnchantment);
+
+            }; builder.pop();
 
             builder.pop();
         };
@@ -120,6 +132,10 @@ public class PqualityConfig {
     
     private static final boolean validateAttributeName(Object obj) {
         return obj instanceof final String attributeName && ForgeRegistries.ATTRIBUTES.containsKey(new ResourceLocation(attributeName));
+    };
+
+    private static final boolean validateEnchantment(Object obj) {
+        return obj instanceof final String enchantmentName && ForgeRegistries.ENCHANTMENTS.containsKey(new ResourceLocation(enchantmentName));
     };
 
     protected static final ForgeConfigSpec clientSpec;

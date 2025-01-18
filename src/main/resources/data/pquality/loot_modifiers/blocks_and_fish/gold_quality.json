@@ -1,0 +1,46 @@
+{
+    "type": "petrolpark:contaminate",
+    "conditions": [
+        {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+                "enchantments": [
+                    {
+                        "enchantment": "pquality:enhancement"
+                    }
+                ]
+            }
+        }
+    ],
+    "contaminant": "pquality:gold_quality",
+    "chance": {
+        "type": "petrolpark:sigmoid",
+        "midpoint": {
+            "type": "petrolpark:sum",
+            "values": [
+                65.8,
+                {
+                    "type": "petrolpark:product",
+                    "values": [
+                        -0.8,
+                        {
+                            "type": "petrolpark:tool_property",
+                            "value": {
+                                "type": "petrolpark:enchantment_level",
+                                "enchantment": "pquality:enhancement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "shallowness": 18.0,
+        "value": {
+            "type": "petrolpark:context_entity_property",
+            "target": "this",
+            "value": {
+                "type": "petrolpark:experience_level"
+            }
+        }
+    }
+}

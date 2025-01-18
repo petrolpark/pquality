@@ -8,5 +8,8 @@
     "contaminant.pquality.diamond_quality": "Diamond Quality",
     "contaminant.pquality.diamond_quality.absent": "Not Diamond Quality",
     "contaminant.pquality.netherite_quality": "Netherite Quality",
-    "contaminant.pquality.netherite_quality.absent": "Not Netherite Quality"
+    "contaminant.pquality.netherite_quality.absent": "Not Netherite Quality",
+
+    "enchantment.pquality.enhancement": "Enhancement",
+    "enchantment.pquality.enhancement.description": "Adds a chance for the Quality of dropped Items to be improved, depending on your Experience Level."
 }

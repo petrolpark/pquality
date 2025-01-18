@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "entries": [
+        "pquality:blocks_and_fish/bronze_quality",
+        "pquality:blocks_and_fish/silver_quality",
+        "pquality:blocks_and_fish/gold_quality",
+        "pquality:blocks_and_fish/diamond_quality",
+        "pquality:blocks_and_fish/netherite_quality",
+
+        "pquality:mobs/bronze_quality",
+        "pquality:mobs/silver_quality",
+        "pquality:mobs/gold_quality",
+        "pquality:mobs/diamond_quality",
+        "pquality:mobs/netherite_quality"
+    ]
+}

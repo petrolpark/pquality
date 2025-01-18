@@ -43,6 +43,10 @@
         },
         {
             "required": false,
+            "id": "create:sticky_mechanical_piston"
+        },
+        {
+            "required": false,
             "id": "create:mechanical_bearing"
         },
         {
