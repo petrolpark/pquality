@@ -52,7 +52,7 @@ public class CommonEvents {
         event.getOriginalModifiers().forEach((attribute, modifier) -> {
             if (modifier.getOperation() != AttributeModifier.Operation.ADDITION) return;
             ResourceLocation rl = ForgeRegistries.ATTRIBUTES.getKey(attribute);
-            if (affectedAttributes.contains(rl.toString()) && event.removeModifier(attribute, modifier)) event.addModifier(attribute, AttributeModifierHelper.copyAndMultiply(modifier, quality));
+            if (affectedAttributes.contains(rl.toString()) && event.removeModifier(attribute, modifier)) event.addModifier(attribute, modifier.getAmount() > 0f ? AttributeModifierHelper.copyAndMultiply(modifier, quality) : AttributeModifierHelper.copyAndReduce(modifier, quality));
         });
     };
 };
