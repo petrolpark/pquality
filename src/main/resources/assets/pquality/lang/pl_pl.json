@@ -1,0 +1,15 @@
+{
+    "contaminant.pquality.bronze_quality": "Brązowa jakość",
+    "contaminant.pquality.bronze_quality.absent": "Brak Brązowej jakości",
+    "contaminant.pquality.silver_quality": "Srebrna jakość",
+    "contaminant.pquality.silver_quality.absent": "Brak Srebrnej jakości",
+    "contaminant.pquality.gold_quality": "Złota jakość",
+    "contaminant.pquality.gold_quality.absent": "Brak Złotej jakości",
+    "contaminant.pquality.diamond_quality": "Diamentowa jakość",
+    "contaminant.pquality.diamond_quality.absent": "Brak Diamentowej jakości",
+    "contaminant.pquality.netherite_quality": "Netherytowa jakość",
+    "contaminant.pquality.netherite_quality.absent": "Brak Netherytowej jakości",
+
+    "enchantment.pquality.enhancement": "Ulepszanie",
+    "enchantment.pquality.enhancement.description": "Dodaje szanse na zwiększenie jakości zdobytych przedmiotów, w zależności od Twojego poziomu XP."
+}
