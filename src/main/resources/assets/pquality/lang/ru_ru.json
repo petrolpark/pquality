@@ -1,0 +1,15 @@
+{
+    "contaminant.pquality.bronze_quality": "Бронзовое качество",
+    "contaminant.pquality.bronze_quality.absent": "Не бронзовое качество",
+    "contaminant.pquality.silver_quality": "Серебряное качество",
+    "contaminant.pquality.silver_quality.absent": "Не серебряное качество",
+    "contaminant.pquality.gold_quality": "Золотое качество",
+    "contaminant.pquality.gold_quality.absent": "Не золотое качество",
+    "contaminant.pquality.diamond_quality": "Алмазное качество",
+    "contaminant.pquality.diamond_quality.absent": "Не алмазное качество",
+    "contaminant.pquality.netherite_quality": "Незеритовое качество",
+    "contaminant.pquality.netherite_quality.absent": "Не незеритовое качество",
+
+    "enchantment.pquality.enhancement": "Улучшение",
+    "enchantment.pquality.enhancement.description": "Добавляет шанс на улучшение качества выпадаемых предметов в зависимости от вашего опыта."
+}
