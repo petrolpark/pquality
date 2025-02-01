@@ -14,6 +14,7 @@ public class QualityFoodManager extends ItemQualityHashMap<FoodProperties> {
 
     @SuppressWarnings("deprecation")
     public static FoodProperties get(Item item, IQuality quality) {
+        if (!item.isEdible() || item.getFoodProperties() == null) return null;
         return FOODS.computeIfAbsent(item, quality, () -> {
             FoodProperties baseProperties = item.getFoodProperties();
             if (quality == QualityUtil.NO_QUALITY) return baseProperties;

@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import com.petrolpark.pquality.common.enchantment.PqualityEnchantmentCategories;
 import com.petrolpark.pquality.common.enchantment.PqualityEnchantments;
+import com.petrolpark.pquality.common.loot.PqualityNumberProviders;
 import com.petrolpark.pquality.core.RegisteredQuality;
 import com.petrolpark.pquality.recipe.PqualityRecipeTypes;
 import com.petrolpark.registrate.PetrolparkRegistrate;
@@ -55,6 +56,7 @@ public class Pquality
         // Registration
         PqualityRecipeTypes.register(modEventBus);
         PqualityEnchantments.register();
+        PqualityNumberProviders.register();
 
         // Config
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PqualityConfig.clientSpec);
