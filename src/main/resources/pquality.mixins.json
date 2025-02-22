@@ -8,6 +8,7 @@
         "accessor.MobEffectInstanceAccessor",
         "compat.create.KineticBlockEntityMixin",
         "AnvilMenuMixin",
+        "BundleItemMixin",
         "EyeOfEnderMixin",
         "FireworkRocketEntityMixin",
         "IForgeItemMixin",

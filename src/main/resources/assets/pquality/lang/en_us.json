@@ -10,6 +10,8 @@
     "contaminant.pquality.netherite_quality": "Netherite Quality",
     "contaminant.pquality.netherite_quality.absent": "Not Netherite Quality",
 
+    "config.jade.plugin_pquality.quality": "Quality",
+
     "enchantment.pquality.enhancement": "Enhancement",
     "enchantment.pquality.enhancement.description": "Adds a chance for the Quality of dropped Items to be improved, depending on your Experience Level."
 }

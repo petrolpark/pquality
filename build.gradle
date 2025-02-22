@@ -100,7 +100,7 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
-    maven { // Registrate
+    maven { // Registrate, Jade
         name = 'tterag maven'
         url = 'https://www.cursemaven.com'
     }
@@ -152,8 +152,13 @@ dependencies {
     // Petrolpark Library (temporary)
     implementation "com.petrolpark:petrolpark:${minecraft_version}-${petrolpark_library_version}"
 
+    // SOFT DEPENDENCIES
+
     // Create
     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+
+    // Jade
+    implementation fg.deobf("curse.maven:jade-324717:${jade_id}")
 
     // Flywheel
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
