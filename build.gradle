@@ -16,8 +16,8 @@ buildscript {
 
 plugins {
     id 'com.matthewprenger.cursegradle' version "${cursegradle_version}"
+    id 'net.minecraftforge.gradle' version "6.0.35"
 }
-apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'maven-publish'
 apply plugin: 'eclipse'
@@ -105,6 +105,14 @@ repositories {
         url = 'https://www.cursemaven.com'
     }
 
+    maven { // Create, Ponder, Flywheel
+        name = "Create maven"
+        url = "https://maven.createmod.net" 
+    } 
+    maven { // ForgeConfigAPIPort
+        url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" 
+    } 
+
     exclusiveContent {
         forRepository {
             maven {
@@ -154,18 +162,25 @@ dependencies {
 
     // SOFT DEPENDENCIES
 
-    // Create
-    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    // Create & Dependents
+    implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
+    compileOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}"))
+    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
+    implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
+    implementation("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")
+
+    // Curios
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
 
     // Jade
     implementation fg.deobf("curse.maven:jade-324717:${jade_id}")
 
-    // Flywheel
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
-    
     // ANNOTATION PROCESSORS
 
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}"))
 }
 
 jar {

@@ -61,7 +61,7 @@ public abstract class BundleItemMixin {
         method = "Lnet/minecraft/world/item/BundleItem;appendHoverText",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/network/chat/Component;translatable"
+            target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;"
         )
     )
     public MutableComponent inAppendHoverText(String key, Object[] args, ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {

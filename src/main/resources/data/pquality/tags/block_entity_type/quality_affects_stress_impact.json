@@ -59,11 +59,11 @@
         },
         {
             "required": false,
-            "id": "create:mechanical_drill"
+            "id": "create:drill"
         },
         {
             "required": false,
-            "id": "create:mechanical_saw"
+            "id": "create:saw"
         },
         {
             "required": false,
