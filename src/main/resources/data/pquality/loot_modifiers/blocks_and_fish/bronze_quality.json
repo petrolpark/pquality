@@ -18,7 +18,7 @@
             }
         }
     ],
-    "contaminant": "pquality:bronze_quality",
+    "flag": "pquality:bronze_quality",
     "chance": {
         "type": "petrolpark:sigmoid",
         "midpoint": {

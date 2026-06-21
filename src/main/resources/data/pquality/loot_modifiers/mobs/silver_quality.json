@@ -25,7 +25,7 @@
             "entity": "killer"
         }
     ],
-    "contaminant": "pquality:silver_quality",
+    "flag": "pquality:silver_quality",
     "chance": {
         "type": "petrolpark:sigmoid",
         "midpoint": {

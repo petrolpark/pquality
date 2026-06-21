@@ -1,0 +1,42 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+#issueTrackerURL="https://github.com/petrolpark/pquality/issues/1"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://www.modrinth.com/mod/pquality"
+logoFile="logo.png"
+authors="${mod_authors}"
+description='''${mod_description}'''
+enumExtensions="META-INF/enumextensions.json"
+#featureFlags="META-INF/feature_flags.json"
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+	modId="create"
+	type="optional"
+	versionRange="[6.0.10,6.1.0)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.${mod_id}]]
+	modId="petrolpark"
+	type="required"
+	versionRange="[1.5.0,1.6.0)"
+	ordering="AFTER"
+	side="BOTH"

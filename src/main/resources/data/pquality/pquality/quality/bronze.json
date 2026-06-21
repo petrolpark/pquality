@@ -3,5 +3,5 @@
     "multiplier": 1.1,
     "bigMultiplier": 1.2,
     "reducer": 0.9,
-    "contaminant": "pquality:bronze_quality"
+    "flag": "pquality:bronze_quality"
 }

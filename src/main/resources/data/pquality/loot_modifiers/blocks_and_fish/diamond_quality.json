@@ -12,7 +12,7 @@
             }
         }
     ],
-    "contaminant": "pquality:diamond_quality",
+    "flag": "pquality:diamond_quality",
     "chance": {
         "type": "petrolpark:sigmoid",
         "midpoint": {
