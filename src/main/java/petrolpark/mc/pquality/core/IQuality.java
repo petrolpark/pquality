@@ -1,14 +1,9 @@
 package petrolpark.mc.pquality.core;
 
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.world.item.ItemStack;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.IItemDecorator;
+public interface IQuality extends Comparable<IQuality> {
 
-public interface IQuality {
-    
+    public int priority();
+
     public double multiply(double base);
 
     public double bigMultiply(double base);
@@ -29,15 +24,8 @@ public interface IQuality {
 
     public float reduce(float base);
 
-    /**
-     * @param guiGraphics
-     * @param font
-     * @param stack
-     * @param xOffset
-     * @param yOffset
-     * @return {@code true} if the Render State needs resetting
-     * @see IItemDecorator#render(GuiGraphics, Font, ItemStack, int, int)
-     */
-    @OnlyIn(Dist.CLIENT)
-    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset);
+    @Override
+    default int compareTo(IQuality o) {
+        return priority() - o.priority();
+    };
 };

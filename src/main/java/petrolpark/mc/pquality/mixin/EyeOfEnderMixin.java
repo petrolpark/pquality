@@ -7,12 +7,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.EyeOfEnder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import petrolpark.mc.pquality.PqualityConfig;
+import petrolpark.mc.pquality.config.PqualityConfigs;
 import petrolpark.mc.pquality.core.QualityUtil;
 
 @Mixin(EyeOfEnder.class)
@@ -34,6 +35,6 @@ public abstract class EyeOfEnderMixin extends Entity {
         at = @At("RETURN")
     )
     public void inSignalTo(BlockPos pos, CallbackInfo ci) {
-        if (PqualityConfig.SERVER.affectEyeOfEnder.get()) surviveAfterDeath = random.nextInt(QualityUtil.getQuality(getItem()).bigMultiply(5)) > 0;
+        if (PqualityConfigs.server().affectEyeOfEnder.get()) surviveAfterDeath = random.nextFloat() < Mth.clamp(QualityUtil.getQuality(getItem()).bigMultiply(0.2f), 0f, 1f);
     };
 };

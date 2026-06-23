@@ -10,7 +10,7 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ItemCombinerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
-import petrolpark.mc.pquality.PqualityConfig;
+import petrolpark.mc.pquality.config.PqualityConfigs;
 import petrolpark.mc.pquality.core.QualityUtil;
 
 @Mixin(AnvilMenu.class)
@@ -29,7 +29,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
         )
     )
     public int getDamageRepaired(int remainingDamage, int maxRepair) {
-        if (!PqualityConfig.SERVER.affectAnvilRepair.get()) return Math.min(remainingDamage, maxRepair);
+        if (!PqualityConfigs.server().affectAnvilRepair.get()) return Math.min(remainingDamage, maxRepair);
         ItemStack repairItemStack = inputSlots.getItem(1);
         return Math.min(remainingDamage, QualityUtil.getQuality(repairItemStack).multiply(maxRepair));
     };

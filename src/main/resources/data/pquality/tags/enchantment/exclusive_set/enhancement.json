@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "#minecraft:exclusive_set/mining",
+        "minecraft:looting",
+        "minecraft:luck_of_the_sea"
+    ]
+}

@@ -1,10 +1,13 @@
 package petrolpark.mc.pquality.core;
 
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.world.item.ItemStack;
+public final class NoQuality implements IQuality {
 
-public class NoQuality implements IQuality {
+    NoQuality() {};
+
+    @Override
+    public int priority() {
+        return Integer.MIN_VALUE;
+    };
 
     @Override
     public double multiply(double base) {
@@ -54,11 +57,6 @@ public class NoQuality implements IQuality {
     @Override
     public float reduce(float base) {
         return base;
-    };
-
-    @Override
-    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) {
-        return false;
     };
     
 };

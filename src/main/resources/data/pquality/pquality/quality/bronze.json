@@ -1,7 +1,7 @@
 {
     "priority": 1000,
     "multiplier": 1.1,
-    "bigMultiplier": 1.2,
+    "big_multiplier": 1.25,
     "reducer": 0.9,
     "flag": "pquality:bronze_quality"
 }

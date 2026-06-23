@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import petrolpark.mc.pquality.PqualityConfig;
+import petrolpark.mc.pquality.config.PqualityConfigs;
 import petrolpark.mc.pquality.core.QualityUtil;
 
 @Mixin(FireworkRocketEntity.class)
@@ -23,6 +23,6 @@ public abstract class FireworkRocketEntityMixin {
         at = @At("RETURN")
     )
     public void inInit(Level level, double x, double y, double z, ItemStack stack, CallbackInfo ci) {
-        if (PqualityConfig.SERVER.affectFireworkFlightTime.get()) lifetime = QualityUtil.getQuality(stack).bigMultiply(lifetime);
+        if (PqualityConfigs.server().affectFireworkFlightTime.get()) lifetime = QualityUtil.getQuality(stack).bigMultiply(lifetime);
     };
 };

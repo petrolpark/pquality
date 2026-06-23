@@ -13,5 +13,35 @@
     "config.jade.plugin_pquality.quality": "Quality",
 
     "enchantment.pquality.enhancement": "Enhancement",
-    "enchantment.pquality.enhancement.description": "Adds a chance for the Quality of dropped Items to be improved, depending on your Experience Level."
+    "enchantment.pquality.enhancement.description": "Adds a chance for the Quality of dropped Items to be improved, depending on your Experience Level.",
+
+    "pquality_effect.pquality.anvil_repair": "Items restore %1$sx more durability",
+    "pquality_effect.pquality.attributes": "Positive attributes are %1$sx stronger and negative ones are %3$sx weaker",
+    "pquality_effect.pquality.baby_animal_growth": "Animal food will age babies %2$sx faster",
+    "pquality_effect.pquality.bone_meal": "Bonemeal-like items have a chance to retry growing, for an average total of %3$s attempts",
+    "pquality_effect.pquality.bundle_size": "Bundles can store %1$sx more items",
+    "pquality_effect.pquality.composting": "Items are %2$sx more likely to add compost layers",
+    "pquality_effect.pquality.eye_of_ender": "Eyes of Ender are %2$sx less likely to break",
+    "pquality_effect.pquality.durability": "Items have %1$sx durability",
+    "pquality_effect.pquality.firework_flight_time": "Fireworks fly %2$sx further, including when boosting Elytra",
+    "pquality_effect.pquality.food_hunger": "Food restores %1$sx more hunger",
+    "pquality_effect.pquality.food_saturation": "Food gives %1$sx more saturation",
+    "pquality_effect.pquality.food_eat_time": "Food takes %3$sx as long to eat",
+    "pquality_effect.pquality.food_effect_probability": "Food is %1$sx as likely to trigger beneficial effects, and %3$sx as likely to trigger harmful ones",
+    "pquality_effect.pquality.food_effect_length": "Effects from food last %1$sx as long if they are beneficial, and %3$sx as long if they are harmful",
+    "pquality_effect.pquality.food_effect_level": "Effects from food are %1$sx the level if they are beneficial, or %3$sx the level if they are harmful",
+    "pquality_effect.pquality.fuel_burn_time": "Fuel smelts %2$sx as many items",
+    "pquality_effect.pquality.merchant_trade_reward": "Villagers pay %1$sx value for items",
+    "pquality_effect.pquality.merchant_trade_xp": "Vilagers gain %2$sx XP from trading items",
+    "pquality_effect.pquality.potion_length": "Potions last %1$sx as long",
+
+    "pquality_effect.pquality.stress_capacity": "Kinetic blocks use %3$sx the Stress Capacity",
+    "pquality_effect.pquality.backtank_capacity": "Backtanks have %1$sx the air capacity",
+
+    "pquality.gui.jei.category.effects": "Quality Effects",
+
+    "tag.attribute.pquality.unaffected_by_quality": "Unaffected by Quality",
+    "tag.block_entity_type.pquality.quality_affects_stress_impact": "Quality Decreases Stress Impact",
+    "tag.item.pquality.decreases_quality": "Quality-Decreasing Ingredients",
+    "tag.item.pquality.enchantable.enhancement": "Enchantable with Enchancement"
 }

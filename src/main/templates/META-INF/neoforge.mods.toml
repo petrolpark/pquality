@@ -11,7 +11,7 @@ displayURL="https://www.modrinth.com/mod/pquality"
 logoFile="logo.png"
 authors="${mod_authors}"
 description='''${mod_description}'''
-enumExtensions="META-INF/enumextensions.json"
+#enumExtensions="META-INF/enumextensions.json"
 #featureFlags="META-INF/feature_flags.json"
 
 [[mixins]]
