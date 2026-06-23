@@ -30,12 +30,14 @@ public class PqualityPluginManager {
             plugin.acceptFlagPoleModifiers(
                 (fp, b) -> QualityUtil.fetchQuality(fp).multiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).bigMultiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).reduce(b),
                 (fp, b) -> QualityUtil.fetchQuality(fp).multiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).bigMultiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).reduce(b),
-                (fp, b) -> QualityUtil.fetchQuality(fp).multiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).bigMultiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).reduce(b)
+                (fp, b) -> QualityUtil.fetchQuality(fp).multiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).bigMultiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).reduce(b),
+				(fp, b) -> QualityUtil.fetchQuality(fp).multiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).bigMultiply(b), (fp, b) -> QualityUtil.fetchQuality(fp).reduce(b)
             );
             plugin.acceptItemStackModifiers(
                 (s, b) -> QualityUtil.getQuality(s).multiply(b), (s, b) -> QualityUtil.getQuality(s).bigMultiply(b), (s, b) -> QualityUtil.getQuality(s).reduce(b),
                 (s, b) -> QualityUtil.getQuality(s).multiply(b), (s, b) -> QualityUtil.getQuality(s).bigMultiply(b), (s, b) -> QualityUtil.getQuality(s).reduce(b), 
-                (s, b) -> QualityUtil.getQuality(s).multiply(b), (s, b) -> QualityUtil.getQuality(s).bigMultiply(b), (s, b) -> QualityUtil.getQuality(s).reduce(b)
+                (s, b) -> QualityUtil.getQuality(s).multiply(b), (s, b) -> QualityUtil.getQuality(s).bigMultiply(b), (s, b) -> QualityUtil.getQuality(s).reduce(b),
+				(s, b) -> QualityUtil.getQuality(s).multiply(b), (s, b) -> QualityUtil.getQuality(s).bigMultiply(b), (s, b) -> QualityUtil.getQuality(s).reduce(b)
             );
         };
     };

@@ -1,5 +1,7 @@
 package petrolpark.mc.pquality.core;
 
+import org.apache.commons.lang3.math.Fraction;
+
 public interface IQuality extends Comparable<IQuality> {
 
     public int priority();
@@ -23,6 +25,12 @@ public interface IQuality extends Comparable<IQuality> {
     public float bigMultiply(float base);
 
     public float reduce(float base);
+
+    public Fraction multiply(Fraction base);
+
+    public Fraction bigMultiply(Fraction base);
+
+    public Fraction reduce(Fraction base);
 
     @Override
     default int compareTo(IQuality o) {

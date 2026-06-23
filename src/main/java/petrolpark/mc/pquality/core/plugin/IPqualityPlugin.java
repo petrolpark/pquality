@@ -1,6 +1,9 @@
 package petrolpark.mc.pquality.core.plugin;
 
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
+
+import org.apache.commons.lang3.math.Fraction;
 
 import mezz.jei.api.JeiPlugin;
 import net.minecraft.world.item.ItemStack;
@@ -32,13 +35,15 @@ public interface IPqualityPlugin {
     public default void acceptFlagPoleModifiers(
         ObjDouble2DoubleFunction<IFlagPole<?, ?>> doubleMultiplier, ObjDouble2DoubleFunction<IFlagPole<?, ?>> doubleBigMultiplier, ObjDouble2DoubleFunction<IFlagPole<?, ?>> doubleReducer,
         ObjInt2IntFunction<IFlagPole<?, ?>> intMultiplier, ObjInt2IntFunction<IFlagPole<?, ?>> intBigMultiplier, ObjInt2IntFunction<IFlagPole<?, ?>> intReducer,
-        ObjFloat2FloatFunction<IFlagPole<?, ?>> floatMultiplier, ObjFloat2FloatFunction<IFlagPole<?, ?>> floatBigMultiplier, ObjFloat2FloatFunction<IFlagPole<?, ?>> floatReducer
+        ObjFloat2FloatFunction<IFlagPole<?, ?>> floatMultiplier, ObjFloat2FloatFunction<IFlagPole<?, ?>> floatBigMultiplier, ObjFloat2FloatFunction<IFlagPole<?, ?>> floatReducer,
+        BiFunction<IFlagPole<?, ?>, Fraction, Fraction> fractionMultiplier, BiFunction<IFlagPole<?, ?>, Fraction, Fraction> fractionBigMultiplier, BiFunction<IFlagPole<?, ?>, Fraction, Fraction> fractionReducer
     ) {};
 
     public default void acceptItemStackModifiers(
         ObjDouble2DoubleFunction<ItemStack> doubleMultiplier, ObjDouble2DoubleFunction<ItemStack> doubleBigMultiplier, ObjDouble2DoubleFunction<ItemStack> doubleReducer,
         ObjInt2IntFunction<ItemStack> intMultiplier, ObjInt2IntFunction<ItemStack> intBigMultiplier, ObjInt2IntFunction<ItemStack> intReducer,
-        ObjFloat2FloatFunction<ItemStack> floatMultiplier, ObjFloat2FloatFunction<ItemStack> floatBigMultiplier, ObjFloat2FloatFunction<ItemStack> floatReducer
+        ObjFloat2FloatFunction<ItemStack> floatMultiplier, ObjFloat2FloatFunction<ItemStack> floatBigMultiplier, ObjFloat2FloatFunction<ItemStack> floatReducer,
+        BiFunction<ItemStack, Fraction, Fraction> fractionMultiplier, BiFunction<ItemStack, Fraction, Fraction> fractionBigMultiplier, BiFunction<ItemStack, Fraction, Fraction> fractionReducer
     ) {};
 
     public default void registerEffectDescriptions(Consumer<IQualityEffectDescription> adder) {};

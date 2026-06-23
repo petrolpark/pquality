@@ -12,8 +12,6 @@
         "AnimalMixin",
         "AnvilMenuMixin",
         "BoneMealItemMixin",
-        "BundleContentsMutableMixin",
-        "BundleItemMixin",
         "ComposterBlockMixin",
         "EyeOfEnderMixin",
         "FireworkRocketEntityMixin",

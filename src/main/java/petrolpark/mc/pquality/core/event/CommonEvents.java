@@ -13,6 +13,7 @@ import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import petrolpark.mc.library.core.flags.ItemFlagPoleSavedEvent;
+import petrolpark.mc.library.core.world.item.bundle.BundleSizeEvent;
 import petrolpark.mc.pquality.PqualityTags;
 import petrolpark.mc.pquality.config.PqualityConfigs;
 import petrolpark.mc.pquality.core.IQuality;
@@ -62,5 +63,10 @@ public class CommonEvents {
                     entry.slot()
                 );
         };
+    };
+
+    @SubscribeEvent
+    public static final void onBundleSize(BundleSizeEvent event) {
+        if (PqualityConfigs.server().affectBundleSize.get()) event.setSize(QualityUtil.getQuality(event.getStack()).multiply(event.getSize()));
     };
 };

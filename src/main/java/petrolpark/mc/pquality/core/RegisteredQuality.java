@@ -7,6 +7,8 @@ import java.util.TreeSet;
 
 import javax.annotation.Nonnull;
 
+import org.apache.commons.lang3.math.Fraction;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -84,6 +86,21 @@ public record RegisteredQuality(int priority, double multiplier, double bigMulti
     @Override
     public float reduce(float base) {
         return (float)(reducer() * base);
+    };
+
+    @Override
+    public Fraction multiply(Fraction base) {
+        return base.multiplyBy(Fraction.getFraction(multiplier()));
+    };
+
+    @Override
+    public Fraction bigMultiply(Fraction base) {
+        return base.multiplyBy(Fraction.getFraction(bigMultiplier()));
+    };
+
+    @Override
+    public Fraction reduce(Fraction base) {
+        return base.multiplyBy(Fraction.getFraction(reducer()));
     };
 
     public static class ReloadListener implements ResourceManagerReloadListener {

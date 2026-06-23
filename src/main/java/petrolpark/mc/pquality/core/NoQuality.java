@@ -1,5 +1,7 @@
 package petrolpark.mc.pquality.core;
 
+import org.apache.commons.lang3.math.Fraction;
+
 public final class NoQuality implements IQuality {
 
     NoQuality() {};
@@ -56,6 +58,21 @@ public final class NoQuality implements IQuality {
 
     @Override
     public float reduce(float base) {
+        return base;
+    };
+
+    @Override
+    public Fraction multiply(Fraction base) {
+        return base;
+    };
+
+    @Override
+    public Fraction bigMultiply(Fraction base) {
+        return base;
+    };
+
+    @Override
+    public Fraction reduce(Fraction base) {
         return base;
     };
     
