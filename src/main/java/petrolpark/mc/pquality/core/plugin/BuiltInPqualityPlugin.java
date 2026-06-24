@@ -43,6 +43,7 @@ public class BuiltInPqualityPlugin implements IPqualityPlugin {
         register(adder, "attributes", server().affectAttributes, item -> !item.components().getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.EMPTY).modifiers().isEmpty());
         register(adder, "baby_animal_growth", server().affectBabyAnimalGrowth, ItemHelper.getKnownAnimalFoods(Minecraft.getInstance().level).stream());
         register(adder, "bone_meal", server().affectBoneMeal, item -> item instanceof BoneMealItem);
+        register(adder, "bottle_o_enchanting", server().affectBottleOEnchanting, Items.EXPERIENCE_BOTTLE);
         register(adder, "bundle_size", server().affectBundleSize, item -> item instanceof BundleItem);
         register(adder, "composting", server().affectComposting, item -> item.builtInRegistryHolder().getData(NeoForgeDataMaps.COMPOSTABLES) != null);
         register(adder, "durability", server().affectItemDurability, item -> item.components().has(DataComponents.MAX_DAMAGE));

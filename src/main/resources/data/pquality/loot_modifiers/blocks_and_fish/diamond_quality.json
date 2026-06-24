@@ -12,17 +12,17 @@
             }
         }
     ],
-    "flag": "pquality:netherite_quality",
+    "flag": "pquality:diamond_quality",
     "chance": {
         "type": "petrolpark:sigmoid",
         "midpoint": {
             "type": "petrolpark:sum",
             "values": [
-                252.0,
+                141.0,
                 {
                     "type": "petrolpark:product",
                     "values": [
-                        -2.0,
+                        -1.0,
                         {
                             "type": "petrolpark:tool_property",
                             "value": {
@@ -34,9 +34,9 @@
                 }
             ]
         },
-        "shallowness": 60.0,
+        "shallowness": 40.0,
         "value": {
-            "type": "petrolpark:context_entity_property",
+            "type": "petrolpark:entity_property",
             "target": "this",
             "value": {
                 "type": "petrolpark:experience_level"

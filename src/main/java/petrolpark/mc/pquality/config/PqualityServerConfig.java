@@ -8,6 +8,7 @@ public class PqualityServerConfig extends ConfigBase {
     public final ConfigBool affectAttributes = b(true, "affectAttributes", "Quality items have positive Attribute Modifiers increased and negative ones decreased");
     public final ConfigBool affectBabyAnimalGrowth = b(true, "affectBabyAnimalGrowth", "Quality animal food will cause babies to grow up quicker");
     public final ConfigBool affectBoneMeal = b(true, "affectBonemeal", "Quality bonemeals will have a greater chance of growing things");
+    public final ConfigBool affectBottleOEnchanting = b(true, "affectBottleOEnchanting", "Quality Bottles o' Enchanting give more experience");
     public final ConfigBool affectBundleSize = b(true, "affectBundleSize", "Quality Bundles can hold more items");
     public final ConfigBool affectComposting = b(true, "affectComposting", "Quality items have a higher chance of adding compost layers");
     public final ConfigBool affectEyeOfEnder = b(true, "affectEyeOfEnder", "Quality Eyes of Ender have a lower chance of breaking");

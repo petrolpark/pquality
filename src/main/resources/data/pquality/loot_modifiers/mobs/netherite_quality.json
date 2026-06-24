@@ -5,7 +5,7 @@
             "condition": "petrolpark:parameters_supplied",
             "parameters": [
                 "minecraft:this_entity",
-                "minecraft:killer_entity",
+                "minecraft:attacking_entity",
                 "minecraft:damage_source"
             ]
         },
@@ -22,7 +22,7 @@
                     }
                 }
             },
-            "entity": "killer"
+            "entity": "attacker"
         }
     ],
     "flag": "pquality:netherite_quality",
@@ -37,8 +37,8 @@
                     "values": [
                         -2.0,
                         {
-                            "type": "petrolpark:context_entity_property",
-                            "target": "killer",
+                            "type": "petrolpark:entity_property",
+                            "target": "attacker",
                             "value": {
                                 "type": "petrolpark:equipment_property",
                                 "slot": "mainhand",
@@ -54,8 +54,8 @@
         },
         "shallowness": 60.0,
         "value": {
-            "type": "petrolpark:context_entity_property",
-            "target": "killer",
+            "type": "petrolpark:entity_property",
+            "target": "attacker",
             "value": {
                 "type": "petrolpark:experience_level"
             }

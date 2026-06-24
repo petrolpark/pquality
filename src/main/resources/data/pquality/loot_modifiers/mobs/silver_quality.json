@@ -5,7 +5,7 @@
             "condition": "petrolpark:parameters_supplied",
             "parameters": [
                 "minecraft:this_entity",
-                "minecraft:killer_entity",
+                "minecraft:attacking_entity",
                 "minecraft:damage_source"
             ]
         },
@@ -22,23 +22,23 @@
                     }
                 }
             },
-            "entity": "killer"
+            "entity": "attacker"
         }
     ],
-    "flag": "pquality:diamond_quality",
+    "flag": "pquality:silver_quality",
     "chance": {
         "type": "petrolpark:sigmoid",
         "midpoint": {
             "type": "petrolpark:sum",
             "values": [
-                141.0,
+                33.9,
                 {
                     "type": "petrolpark:product",
                     "values": [
-                        -1.0,
+                        -0.9,
                         {
-                            "type": "petrolpark:context_entity_property",
-                            "target": "killer",
+                            "type": "petrolpark:entity_property",
+                            "target": "attacker",
                             "value": {
                                 "type": "petrolpark:equipment_property",
                                 "slot": "mainhand",
@@ -52,10 +52,10 @@
                 }
             ]
         },
-        "shallowness": 40.0,
+        "shallowness": 4.0,
         "value": {
-            "type": "petrolpark:context_entity_property",
-            "target": "killer",
+            "type": "petrolpark:entity_property",
+            "target": "attacker",
             "value": {
                 "type": "petrolpark:experience_level"
             }

@@ -36,7 +36,7 @@
         },
         "shallowness": 18.0,
         "value": {
-            "type": "petrolpark:context_entity_property",
+            "type": "petrolpark:entity_property",
             "target": "this",
             "value": {
                 "type": "petrolpark:experience_level"
