@@ -18,6 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import petrolpark.mc.library.PetrolparkTags;
 import petrolpark.mc.library.util.ItemHelper;
@@ -26,9 +28,7 @@ import petrolpark.mc.pquality.core.client.effectDescription.IQualityEffectDescri
 import petrolpark.mc.pquality.core.client.effectDescription.SimpleQualityEffectDescription;
 
 @PQualityPlugin
-public class BuiltInPqualityPlugin implements IPqualityPlugin {
-
-    BuiltInPqualityPlugin() {};
+public sealed class BuiltInPqualityPlugin implements IPqualityPlugin permits CreatePqualityPlugin {
 
     private final Predicate<Item> isFood = item -> item.components().has(DataComponents.FOOD);
     private final Predicate<Item> isEffectFood = item -> {
@@ -37,6 +37,7 @@ public class BuiltInPqualityPlugin implements IPqualityPlugin {
     };
     
     @Override
+    @OnlyIn(Dist.CLIENT)
     @SuppressWarnings("deprecation")
     public void registerEffectDescriptions(Consumer<IQualityEffectDescription> adder) {
         register(adder, "anvil_repair", server().affectAnvilRepair, ItemHelper.getKnownAnvilRepairItems().stream());

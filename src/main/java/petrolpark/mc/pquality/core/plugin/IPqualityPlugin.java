@@ -7,6 +7,8 @@ import org.apache.commons.lang3.math.Fraction;
 
 import mezz.jei.api.JeiPlugin;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import petrolpark.mc.library.compat.pquality.PetrolparkPqualityPlugin;
 import petrolpark.mc.library.core.flags.IFlagPole;
 import petrolpark.mc.library.util.function.ObjDouble2DoubleFunction;
@@ -46,5 +48,6 @@ public interface IPqualityPlugin {
         BiFunction<ItemStack, Fraction, Fraction> fractionMultiplier, BiFunction<ItemStack, Fraction, Fraction> fractionBigMultiplier, BiFunction<ItemStack, Fraction, Fraction> fractionReducer
     ) {};
 
+    @OnlyIn(Dist.CLIENT)
     public default void registerEffectDescriptions(Consumer<IQualityEffectDescription> adder) {};
 };

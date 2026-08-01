@@ -12,14 +12,14 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import petrolpark.mc.library.compat.Mods;
 import petrolpark.mc.pquality.PqualityTags;
 import petrolpark.mc.pquality.core.client.effectDescription.IQualityEffectDescription;
 
 @PQualityPlugin
-public class CreatePqualityPlugin extends BuiltInPqualityPlugin {
-    
-    CreatePqualityPlugin() {};
+public final class CreatePqualityPlugin extends BuiltInPqualityPlugin {
 
     @Override
     public boolean shouldLoad() {
@@ -27,6 +27,7 @@ public class CreatePqualityPlugin extends BuiltInPqualityPlugin {
     };
     
     @Override
+    @OnlyIn(Dist.CLIENT)
     public void registerEffectDescriptions(Consumer<IQualityEffectDescription> adder) {
         register(adder, "stress_capacity", server().affectStressCapacity,
             StreamSupport.stream(BuiltInRegistries.BLOCK_ENTITY_TYPE.getTagOrEmpty(PqualityTags.BlockEntityTypes.QUALITY_AFFECTS_STRESS_IMPACT.tag).spliterator(), false)
